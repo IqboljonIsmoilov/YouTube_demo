@@ -1,0 +1,147 @@
+20 мая 2022 - 08:17:25.012 - com.zaxxer.hikari.pool.HikariPool -  WARN  - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=8h44m13s900ms963µs814ns).
+20 мая 2022 - 08:20:05.105 - com.zaxxer.hikari.pool.HikariPool -  WARN  - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m9s724ms783µs608ns).
+20 мая 2022 - 09:44:54.762 - com.zaxxer.hikari.pool.HikariPool -  WARN  - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h24m49s660ms75µs984ns).
+20 мая 2022 - 10:03:33.880 - com.zaxxer.hikari.pool.HikariPool -  WARN  - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3m8s893ms572µs282ns).
+20 мая 2022 - 12:21:50.335 - com.zaxxer.hikari.pool.HikariPool -  WARN  - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=5m43s545ms702µs67ns).
+20 мая 2022 - 14:48:23.374 - com.zaxxer.hikari.pool.HikariPool -  WARN  - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2h25m33s33ms198µs461ns).
+20 мая 2022 - 15:02:36.466 - o.s.o.j.LocalContainerEntityManagerFactoryBean -  INFO  - Closing JPA EntityManagerFactory for persistence unit 'default'
+20 мая 2022 - 15:02:36.488 - com.zaxxer.hikari.HikariDataSource -  INFO  - HikariPool-1 - Shutdown initiated...
+20 мая 2022 - 15:02:36.501 - com.zaxxer.hikari.HikariDataSource -  INFO  - HikariPool-1 - Shutdown completed.
+20 мая 2022 - 15:02:57.049 - com.company.YouTubeApplication -  INFO  - Starting YouTubeApplication using Java 18 on Acer with PID 4420 (D:\Bootcamp kurs\Java\100 dars\You_Tube\target\classes started by IQBOLJON in D:\Bootcamp kurs\Java\100 dars\You_Tube)
+20 мая 2022 - 15:02:57.052 - com.company.YouTubeApplication -  DEBUG - Running with Spring Boot v2.6.7, Spring v5.3.19
+20 мая 2022 - 15:02:57.054 - com.company.YouTubeApplication -  INFO  - The following 1 profile is active: "dev"
+20 мая 2022 - 15:03:01.581 - o.s.d.r.c.RepositoryConfigurationDelegate -  INFO  - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+20 мая 2022 - 15:03:01.712 - o.s.d.r.c.RepositoryConfigurationDelegate -  INFO  - Finished Spring Data repository scanning in 113 ms. Found 9 JPA repository interfaces.
+20 мая 2022 - 15:03:03.429 - o.s.b.w.e.tomcat.TomcatWebServer -  INFO  - Tomcat initialized with port(s): 8080 (http)
+20 мая 2022 - 15:03:03.447 - o.a.catalina.core.StandardService -  INFO  - Starting service [Tomcat]
+20 мая 2022 - 15:03:03.447 - o.a.catalina.core.StandardEngine -  INFO  - Starting Servlet engine: [Apache Tomcat/9.0.62]
+20 мая 2022 - 15:03:03.725 - o.a.c.c.C.[Tomcat].[localhost].[/] -  INFO  - Initializing Spring embedded WebApplicationContext
+20 мая 2022 - 15:03:03.726 - o.s.b.w.s.c.ServletWebServerApplicationContext -  INFO  - Root WebApplicationContext: initialization completed in 6537 ms
+20 мая 2022 - 15:03:04.270 - o.h.jpa.internal.util.LogHelper -  INFO  - HHH000204: Processing PersistenceUnitInfo [name: default]
+20 мая 2022 - 15:03:04.348 - org.hibernate.Version -  INFO  - HHH000412: Hibernate ORM core version 5.6.8.Final
+20 мая 2022 - 15:03:04.567 - o.h.annotations.common.Version -  INFO  - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+20 мая 2022 - 15:03:04.719 - com.zaxxer.hikari.HikariDataSource -  INFO  - HikariPool-1 - Starting...
+20 мая 2022 - 15:03:05.036 - com.zaxxer.hikari.HikariDataSource -  INFO  - HikariPool-1 - Start completed.
+20 мая 2022 - 15:03:05.062 - org.hibernate.dialect.Dialect -  INFO  - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+20 мая 2022 - 15:03:05.097 - Hibernate Types -  INFO  - This framework is proudly powered by:
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ _    _                           _     _
+| |  | |                         (_)   | |
+| |__| |_   _ _ __   ___ _ __ ___ _ ___| |_ ___ _ __   ___ ___
+|  __  | | | | '_ \ / _ \ '__/ __| / __| __/ _ \ '_ \ / __/ _ \
+| |  | | |_| | |_) |  __/ |  \__ \ \__ \ ||  __/ | | | (_|  __/
+|_|  |_|\__, | .__/ \___|_|  |___/_|___/\__\___|_| |_|\___\___|
+         __/ | |
+        |___/|_|
+
+At Hypersistence, we only build amazing tools, like Hibernate Types, Flexy Pool, or Hypersistence Optimizer.
+
+What if there were a tool that could automatically detect JPA and Hibernate performance issues?
+
+Hypersistence Optimizer is that tool! For more details, go to: 
+
+https://vladmihalcea.com/hypersistence-optimizer/
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+20 мая 2022 - 15:03:06.411 - o.h.e.t.j.p.i.JtaPlatformInitiator -  INFO  - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+20 мая 2022 - 15:03:06.423 - o.s.o.j.LocalContainerEntityManagerFactoryBean -  INFO  - Initialized JPA EntityManagerFactory for persistence unit 'default'
+20 мая 2022 - 15:03:07.411 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration -  WARN  - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+20 мая 2022 - 15:03:07.500 - o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext -  WARN  - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'documentationPluginsBootstrapper' defined in URL [jar:file:/C:/Users/IQBOLJON/.m2/repository/io/springfox/springfox-spring-web/3.0.0/springfox-spring-web-3.0.0.jar!/springfox/documentation/spring/web/plugins/DocumentationPluginsBootstrapper.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'webMvcRequestHandlerProvider' defined in URL [jar:file:/C:/Users/IQBOLJON/.m2/repository/io/springfox/springfox-spring-webmvc/3.0.0/springfox-spring-webmvc-3.0.0.jar!/springfox/documentation/spring/web/plugins/WebMvcRequestHandlerProvider.class]: Unsatisfied dependency expressed through constructor parameter 2; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'profileController' method 
+com.company.controller.ProfileController#updateProfileAttach(Integer, ProfileDTO, HttpServletRequest)
+to {PUT [/profile/update{id}]}: There is already 'profileController' bean method
+com.company.controller.ProfileController#updateProfileDetali(Integer, ProfileDTO, HttpServletRequest) mapped.
+20 мая 2022 - 15:03:07.504 - o.s.o.j.LocalContainerEntityManagerFactoryBean -  INFO  - Closing JPA EntityManagerFactory for persistence unit 'default'
+20 мая 2022 - 15:03:07.507 - com.zaxxer.hikari.HikariDataSource -  INFO  - HikariPool-1 - Shutdown initiated...
+20 мая 2022 - 15:03:07.515 - com.zaxxer.hikari.HikariDataSource -  INFO  - HikariPool-1 - Shutdown completed.
+20 мая 2022 - 15:03:07.517 - o.a.catalina.core.StandardService -  INFO  - Stopping service [Tomcat]
+20 мая 2022 - 15:03:07.541 - o.s.b.a.l.ConditionEvaluationReportLoggingListener -  INFO  - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+20 мая 2022 - 15:03:07.572 - o.s.boot.SpringApplication -  ERROR - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'documentationPluginsBootstrapper' defined in URL [jar:file:/C:/Users/IQBOLJON/.m2/repository/io/springfox/springfox-spring-web/3.0.0/springfox-spring-web-3.0.0.jar!/springfox/documentation/spring/web/plugins/DocumentationPluginsBootstrapper.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'webMvcRequestHandlerProvider' defined in URL [jar:file:/C:/Users/IQBOLJON/.m2/repository/io/springfox/springfox-spring-webmvc/3.0.0/springfox-spring-webmvc-3.0.0.jar!/springfox/documentation/spring/web/plugins/WebMvcRequestHandlerProvider.class]: Unsatisfied dependency expressed through constructor parameter 2; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'profileController' method 
+com.company.controller.ProfileController#updateProfileAttach(Integer, ProfileDTO, HttpServletRequest)
+to {PUT [/profile/update{id}]}: There is already 'profileController' bean method
+com.company.controller.ProfileController#updateProfileDetali(Integer, ProfileDTO, HttpServletRequest) mapped.
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:953)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:740)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:415)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1312)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301)
+	at com.company.YouTubeApplication.main(YouTubeApplication.java:10)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'webMvcRequestHandlerProvider' defined in URL [jar:file:/C:/Users/IQBOLJON/.m2/repository/io/springfox/springfox-spring-webmvc/3.0.0/springfox-spring-webmvc-3.0.0.jar!/springfox/documentation/spring/web/plugins/WebMvcRequestHandlerProvider.class]: Unsatisfied dependency expressed through constructor parameter 2; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'profileController' method 
+com.company.controller.ProfileController#updateProfileAttach(Integer, ProfileDTO, HttpServletRequest)
+to {PUT [/profile/update{id}]}: There is already 'profileController' bean method
+com.company.controller.ProfileController#updateProfileDetali(Integer, ProfileDTO, HttpServletRequest) mapped.
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.addCandidateEntry(DefaultListableBeanFactory.java:1607)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1571)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveMultipleBeans(DefaultListableBeanFactory.java:1460)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1347)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1309)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 19 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'profileController' method 
+com.company.controller.ProfileController#updateProfileAttach(Integer, ProfileDTO, HttpServletRequest)
+to {PUT [/profile/update{id}]}: There is already 'profileController' bean method
+com.company.controller.ProfileController#updateProfileDetali(Integer, ProfileDTO, HttpServletRequest) mapped.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.addCandidateEntry(DefaultListableBeanFactory.java:1607)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1571)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveMultipleBeans(DefaultListableBeanFactory.java:1460)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1347)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1309)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 36 common frames omitted
+Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'profileController' method 
+com.company.controller.ProfileController#updateProfileAttach(Integer, ProfileDTO, HttpServletRequest)
+to {PUT [/profile/update{id}]}: There is already 'profileController' bean method
+com.company.controller.ProfileController#updateProfileDetali(Integer, ProfileDTO, HttpServletRequest) mapped.
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.validateMethodMapping(AbstractHandlerMethodMapping.java:669)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:635)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:332)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:420)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:76)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lambda$detectHandlerMethods$2(AbstractHandlerMethodMapping.java:299)
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:721)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.detectHandlerMethods(AbstractHandlerMethodMapping.java:297)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.processCandidateBean(AbstractHandlerMethodMapping.java:266)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.initHandlerMethods(AbstractHandlerMethodMapping.java:225)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.afterPropertiesSet(AbstractHandlerMethodMapping.java:213)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.afterPropertiesSet(RequestMappingHandlerMapping.java:205)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	... 50 common frames omitted

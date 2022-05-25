@@ -1,0 +1,266 @@
+22 мая 2022 - 21:30:49.231 - com.company.YouTubeApplication -  INFO  - Starting YouTubeApplication using Java 18 on Acer with PID 13240 (D:\Bootcamp kurs\Java\100 dars\You_Tube\target\classes started by IQBOLJON in D:\Bootcamp kurs\Java\100 dars\You_Tube)
+22 мая 2022 - 21:30:49.241 - com.company.YouTubeApplication -  DEBUG - Running with Spring Boot v2.6.7, Spring v5.3.19
+22 мая 2022 - 21:30:49.244 - com.company.YouTubeApplication -  INFO  - The following 1 profile is active: "dev"
+22 мая 2022 - 21:30:51.102 - o.s.d.r.c.RepositoryConfigurationDelegate -  INFO  - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+22 мая 2022 - 21:30:51.224 - o.s.d.r.c.RepositoryConfigurationDelegate -  INFO  - Finished Spring Data repository scanning in 107 ms. Found 11 JPA repository interfaces.
+22 мая 2022 - 21:30:52.240 - o.s.b.w.e.tomcat.TomcatWebServer -  INFO  - Tomcat initialized with port(s): 8080 (http)
+22 мая 2022 - 21:30:52.251 - o.a.catalina.core.StandardService -  INFO  - Starting service [Tomcat]
+22 мая 2022 - 21:30:52.252 - o.a.catalina.core.StandardEngine -  INFO  - Starting Servlet engine: [Apache Tomcat/9.0.62]
+22 мая 2022 - 21:30:52.477 - o.a.c.c.C.[Tomcat].[localhost].[/] -  INFO  - Initializing Spring embedded WebApplicationContext
+22 мая 2022 - 21:30:52.478 - o.s.b.w.s.c.ServletWebServerApplicationContext -  INFO  - Root WebApplicationContext: initialization completed in 3092 ms
+22 мая 2022 - 21:30:52.715 - o.h.jpa.internal.util.LogHelper -  INFO  - HHH000204: Processing PersistenceUnitInfo [name: default]
+22 мая 2022 - 21:30:52.786 - org.hibernate.Version -  INFO  - HHH000412: Hibernate ORM core version 5.6.8.Final
+22 мая 2022 - 21:30:53.045 - o.h.annotations.common.Version -  INFO  - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+22 мая 2022 - 21:30:53.229 - com.zaxxer.hikari.HikariDataSource -  INFO  - HikariPool-1 - Starting...
+22 мая 2022 - 21:30:53.532 - com.zaxxer.hikari.HikariDataSource -  INFO  - HikariPool-1 - Start completed.
+22 мая 2022 - 21:30:53.563 - org.hibernate.dialect.Dialect -  INFO  - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+22 мая 2022 - 21:30:53.607 - Hibernate Types -  INFO  - This framework is proudly powered by:
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ _    _                           _     _
+| |  | |                         (_)   | |
+| |__| |_   _ _ __   ___ _ __ ___ _ ___| |_ ___ _ __   ___ ___
+|  __  | | | | '_ \ / _ \ '__/ __| / __| __/ _ \ '_ \ / __/ _ \
+| |  | | |_| | |_) |  __/ |  \__ \ \__ \ ||  __/ | | | (_|  __/
+|_|  |_|\__, | .__/ \___|_|  |___/_|___/\__\___|_| |_|\___\___|
+         __/ | |
+        |___/|_|
+
+At Hypersistence, we only build amazing tools, like Hibernate Types, Flexy Pool, or Hypersistence Optimizer.
+
+What if there were a tool that could automatically detect JPA and Hibernate performance issues?
+
+Hypersistence Optimizer is that tool! For more details, go to: 
+
+https://vladmihalcea.com/hypersistence-optimizer/
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+22 мая 2022 - 21:30:54.999 - o.h.e.t.j.p.i.JtaPlatformInitiator -  INFO  - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+22 мая 2022 - 21:30:55.023 - o.s.o.j.LocalContainerEntityManagerFactoryBean -  INFO  - Initialized JPA EntityManagerFactory for persistence unit 'default'
+22 мая 2022 - 21:30:55.626 - o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext -  WARN  - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authController': Unsatisfied dependency expressed through field 'authService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authService': Unsatisfied dependency expressed through field 'profileRepository'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'profileRepository' defined in com.company.repository.ProfileRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is org.springframework.data.repository.query.QueryCreationException: Could not create query for public abstract java.lang.Integer com.company.repository.ProfileRepository.updateProfileAttach(java.lang.Integer,java.lang.String)! Reason: Using named parameters for method public abstract java.lang.Integer com.company.repository.ProfileRepository.updateProfileAttach(java.lang.Integer,java.lang.String) but parameter 'Optional[aId]' not found in annotated query 'update ProfileEntity set photo.id = :photo where id=:id'!; nested exception is java.lang.IllegalStateException: Using named parameters for method public abstract java.lang.Integer com.company.repository.ProfileRepository.updateProfileAttach(java.lang.Integer,java.lang.String) but parameter 'Optional[aId]' not found in annotated query 'update ProfileEntity set photo.id = :photo where id=:id'!
+22 мая 2022 - 21:30:55.627 - o.s.o.j.LocalContainerEntityManagerFactoryBean -  INFO  - Closing JPA EntityManagerFactory for persistence unit 'default'
+22 мая 2022 - 21:30:55.631 - com.zaxxer.hikari.HikariDataSource -  INFO  - HikariPool-1 - Shutdown initiated...
+22 мая 2022 - 21:30:55.637 - com.zaxxer.hikari.HikariDataSource -  INFO  - HikariPool-1 - Shutdown completed.
+22 мая 2022 - 21:30:55.640 - o.a.catalina.core.StandardService -  INFO  - Stopping service [Tomcat]
+22 мая 2022 - 21:30:55.657 - o.s.b.a.l.ConditionEvaluationReportLoggingListener -  INFO  - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+22 мая 2022 - 21:30:55.682 - o.s.boot.SpringApplication -  ERROR - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authController': Unsatisfied dependency expressed through field 'authService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authService': Unsatisfied dependency expressed through field 'profileRepository'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'profileRepository' defined in com.company.repository.ProfileRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is org.springframework.data.repository.query.QueryCreationException: Could not create query for public abstract java.lang.Integer com.company.repository.ProfileRepository.updateProfileAttach(java.lang.Integer,java.lang.String)! Reason: Using named parameters for method public abstract java.lang.Integer com.company.repository.ProfileRepository.updateProfileAttach(java.lang.Integer,java.lang.String) but parameter 'Optional[aId]' not found in annotated query 'update ProfileEntity set photo.id = :photo where id=:id'!; nested exception is java.lang.IllegalStateException: Using named parameters for method public abstract java.lang.Integer com.company.repository.ProfileRepository.updateProfileAttach(java.lang.Integer,java.lang.String) but parameter 'Optional[aId]' not found in annotated query 'update ProfileEntity set photo.id = :photo where id=:id'!
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:659)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:639)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:953)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:740)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:415)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1312)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301)
+	at com.company.YouTubeApplication.main(YouTubeApplication.java:10)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authService': Unsatisfied dependency expressed through field 'profileRepository'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'profileRepository' defined in com.company.repository.ProfileRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is org.springframework.data.repository.query.QueryCreationException: Could not create query for public abstract java.lang.Integer com.company.repository.ProfileRepository.updateProfileAttach(java.lang.Integer,java.lang.String)! Reason: Using named parameters for method public abstract java.lang.Integer com.company.repository.ProfileRepository.updateProfileAttach(java.lang.Integer,java.lang.String) but parameter 'Optional[aId]' not found in annotated query 'update ProfileEntity set photo.id = :photo where id=:id'!; nested exception is java.lang.IllegalStateException: Using named parameters for method public abstract java.lang.Integer com.company.repository.ProfileRepository.updateProfileAttach(java.lang.Integer,java.lang.String) but parameter 'Optional[aId]' not found in annotated query 'update ProfileEntity set photo.id = :photo where id=:id'!
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:659)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:639)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1389)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1309)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:656)
+	... 20 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'profileRepository' defined in com.company.repository.ProfileRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is org.springframework.data.repository.query.QueryCreationException: Could not create query for public abstract java.lang.Integer com.company.repository.ProfileRepository.updateProfileAttach(java.lang.Integer,java.lang.String)! Reason: Using named parameters for method public abstract java.lang.Integer com.company.repository.ProfileRepository.updateProfileAttach(java.lang.Integer,java.lang.String) but parameter 'Optional[aId]' not found in annotated query 'update ProfileEntity set photo.id = :photo where id=:id'!; nested exception is java.lang.IllegalStateException: Using named parameters for method public abstract java.lang.Integer com.company.repository.ProfileRepository.updateProfileAttach(java.lang.Integer,java.lang.String) but parameter 'Optional[aId]' not found in annotated query 'update ProfileEntity set photo.id = :photo where id=:id'!
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1389)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1309)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:656)
+	... 34 common frames omitted
+Caused by: org.springframework.data.repository.query.QueryCreationException: Could not create query for public abstract java.lang.Integer com.company.repository.ProfileRepository.updateProfileAttach(java.lang.Integer,java.lang.String)! Reason: Using named parameters for method public abstract java.lang.Integer com.company.repository.ProfileRepository.updateProfileAttach(java.lang.Integer,java.lang.String) but parameter 'Optional[aId]' not found in annotated query 'update ProfileEntity set photo.id = :photo where id=:id'!; nested exception is java.lang.IllegalStateException: Using named parameters for method public abstract java.lang.Integer com.company.repository.ProfileRepository.updateProfileAttach(java.lang.Integer,java.lang.String) but parameter 'Optional[aId]' not found in annotated query 'update ProfileEntity set photo.id = :photo where id=:id'!
+	at org.springframework.data.repository.query.QueryCreationException.create(QueryCreationException.java:101)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lookupQuery(QueryExecutorMethodInterceptor.java:106)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lambda$mapMethodsToQuery$1(QueryExecutorMethodInterceptor.java:94)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.Iterator.forEachRemaining(Iterator.java:133)
+	at java.base/java.util.Collections$UnmodifiableCollection$1.forEachRemaining(Collections.java:1061)
+	at java.base/java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1845)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.mapMethodsToQuery(QueryExecutorMethodInterceptor.java:96)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lambda$new$0(QueryExecutorMethodInterceptor.java:86)
+	at java.base/java.util.Optional.map(Optional.java:260)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.<init>(QueryExecutorMethodInterceptor.java:86)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport.getRepository(RepositoryFactorySupport.java:364)
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.lambda$afterPropertiesSet$5(RepositoryFactoryBeanSupport.java:322)
+	at org.springframework.data.util.Lazy.getNullable(Lazy.java:230)
+	at org.springframework.data.util.Lazy.get(Lazy.java:114)
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.afterPropertiesSet(RepositoryFactoryBeanSupport.java:328)
+	at org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean.afterPropertiesSet(JpaRepositoryFactoryBean.java:144)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	... 44 common frames omitted
+Caused by: java.lang.IllegalStateException: Using named parameters for method public abstract java.lang.Integer com.company.repository.ProfileRepository.updateProfileAttach(java.lang.Integer,java.lang.String) but parameter 'Optional[aId]' not found in annotated query 'update ProfileEntity set photo.id = :photo where id=:id'!
+	at org.springframework.data.jpa.repository.query.JpaQueryMethod.assertParameterNamesInAnnotatedQuery(JpaQueryMethod.java:172)
+	at org.springframework.data.jpa.repository.query.JpaQueryMethod.<init>(JpaQueryMethod.java:139)
+	at org.springframework.data.jpa.repository.query.DefaultJpaQueryMethodFactory.build(DefaultJpaQueryMethodFactory.java:44)
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$AbstractQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:87)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lookupQuery(QueryExecutorMethodInterceptor.java:102)
+	... 66 common frames omitted
+22 мая 2022 - 21:32:49.376 - com.company.YouTubeApplication -  INFO  - Starting YouTubeApplication using Java 18 on Acer with PID 11392 (D:\Bootcamp kurs\Java\100 dars\You_Tube\target\classes started by IQBOLJON in D:\Bootcamp kurs\Java\100 dars\You_Tube)
+22 мая 2022 - 21:32:49.378 - com.company.YouTubeApplication -  DEBUG - Running with Spring Boot v2.6.7, Spring v5.3.19
+22 мая 2022 - 21:32:49.380 - com.company.YouTubeApplication -  INFO  - The following 1 profile is active: "dev"
+22 мая 2022 - 21:32:50.692 - o.s.d.r.c.RepositoryConfigurationDelegate -  INFO  - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+22 мая 2022 - 21:32:50.787 - o.s.d.r.c.RepositoryConfigurationDelegate -  INFO  - Finished Spring Data repository scanning in 83 ms. Found 11 JPA repository interfaces.
+22 мая 2022 - 21:32:51.482 - o.s.b.w.e.tomcat.TomcatWebServer -  INFO  - Tomcat initialized with port(s): 8080 (http)
+22 мая 2022 - 21:32:51.496 - o.a.catalina.core.StandardService -  INFO  - Starting service [Tomcat]
+22 мая 2022 - 21:32:51.496 - o.a.catalina.core.StandardEngine -  INFO  - Starting Servlet engine: [Apache Tomcat/9.0.62]
+22 мая 2022 - 21:32:51.681 - o.a.c.c.C.[Tomcat].[localhost].[/] -  INFO  - Initializing Spring embedded WebApplicationContext
+22 мая 2022 - 21:32:51.681 - o.s.b.w.s.c.ServletWebServerApplicationContext -  INFO  - Root WebApplicationContext: initialization completed in 2233 ms
+22 мая 2022 - 21:32:51.841 - o.h.jpa.internal.util.LogHelper -  INFO  - HHH000204: Processing PersistenceUnitInfo [name: default]
+22 мая 2022 - 21:32:51.898 - org.hibernate.Version -  INFO  - HHH000412: Hibernate ORM core version 5.6.8.Final
+22 мая 2022 - 21:32:52.057 - o.h.annotations.common.Version -  INFO  - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+22 мая 2022 - 21:32:52.167 - com.zaxxer.hikari.HikariDataSource -  INFO  - HikariPool-1 - Starting...
+22 мая 2022 - 21:32:52.396 - com.zaxxer.hikari.HikariDataSource -  INFO  - HikariPool-1 - Start completed.
+22 мая 2022 - 21:32:52.420 - org.hibernate.dialect.Dialect -  INFO  - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+22 мая 2022 - 21:32:52.479 - Hibernate Types -  INFO  - This framework is proudly powered by:
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ _    _                           _     _
+| |  | |                         (_)   | |
+| |__| |_   _ _ __   ___ _ __ ___ _ ___| |_ ___ _ __   ___ ___
+|  __  | | | | '_ \ / _ \ '__/ __| / __| __/ _ \ '_ \ / __/ _ \
+| |  | | |_| | |_) |  __/ |  \__ \ \__ \ ||  __/ | | | (_|  __/
+|_|  |_|\__, | .__/ \___|_|  |___/_|___/\__\___|_| |_|\___\___|
+         __/ | |
+        |___/|_|
+
+At Hypersistence, we only build amazing tools, like Hibernate Types, Flexy Pool, or Hypersistence Optimizer.
+
+What if there were a tool that could automatically detect JPA and Hibernate performance issues?
+
+Hypersistence Optimizer is that tool! For more details, go to: 
+
+https://vladmihalcea.com/hypersistence-optimizer/
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+22 мая 2022 - 21:32:53.650 - o.h.e.t.j.p.i.JtaPlatformInitiator -  INFO  - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+22 мая 2022 - 21:32:53.663 - o.s.o.j.LocalContainerEntityManagerFactoryBean -  INFO  - Initialized JPA EntityManagerFactory for persistence unit 'default'
+22 мая 2022 - 21:32:54.108 - o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext -  WARN  - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authController': Unsatisfied dependency expressed through field 'authService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authService': Unsatisfied dependency expressed through field 'profileRepository'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'profileRepository' defined in com.company.repository.ProfileRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is org.springframework.data.repository.query.QueryCreationException: Could not create query for public abstract java.lang.Integer com.company.repository.ProfileRepository.updateProfileAttach(java.lang.Integer,java.lang.String)! Reason: Using named parameters for method public abstract java.lang.Integer com.company.repository.ProfileRepository.updateProfileAttach(java.lang.Integer,java.lang.String) but parameter 'Optional[aId]' not found in annotated query 'update ProfileEntity set photo.id = :photo where id=:id'!; nested exception is java.lang.IllegalStateException: Using named parameters for method public abstract java.lang.Integer com.company.repository.ProfileRepository.updateProfileAttach(java.lang.Integer,java.lang.String) but parameter 'Optional[aId]' not found in annotated query 'update ProfileEntity set photo.id = :photo where id=:id'!
+22 мая 2022 - 21:32:54.109 - o.s.o.j.LocalContainerEntityManagerFactoryBean -  INFO  - Closing JPA EntityManagerFactory for persistence unit 'default'
+22 мая 2022 - 21:32:54.111 - com.zaxxer.hikari.HikariDataSource -  INFO  - HikariPool-1 - Shutdown initiated...
+22 мая 2022 - 21:32:54.115 - com.zaxxer.hikari.HikariDataSource -  INFO  - HikariPool-1 - Shutdown completed.
+22 мая 2022 - 21:32:54.117 - o.a.catalina.core.StandardService -  INFO  - Stopping service [Tomcat]
+22 мая 2022 - 21:32:54.131 - o.s.b.a.l.ConditionEvaluationReportLoggingListener -  INFO  - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+22 мая 2022 - 21:32:54.151 - o.s.boot.SpringApplication -  ERROR - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authController': Unsatisfied dependency expressed through field 'authService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authService': Unsatisfied dependency expressed through field 'profileRepository'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'profileRepository' defined in com.company.repository.ProfileRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is org.springframework.data.repository.query.QueryCreationException: Could not create query for public abstract java.lang.Integer com.company.repository.ProfileRepository.updateProfileAttach(java.lang.Integer,java.lang.String)! Reason: Using named parameters for method public abstract java.lang.Integer com.company.repository.ProfileRepository.updateProfileAttach(java.lang.Integer,java.lang.String) but parameter 'Optional[aId]' not found in annotated query 'update ProfileEntity set photo.id = :photo where id=:id'!; nested exception is java.lang.IllegalStateException: Using named parameters for method public abstract java.lang.Integer com.company.repository.ProfileRepository.updateProfileAttach(java.lang.Integer,java.lang.String) but parameter 'Optional[aId]' not found in annotated query 'update ProfileEntity set photo.id = :photo where id=:id'!
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:659)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:639)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:953)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:740)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:415)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1312)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301)
+	at com.company.YouTubeApplication.main(YouTubeApplication.java:10)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authService': Unsatisfied dependency expressed through field 'profileRepository'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'profileRepository' defined in com.company.repository.ProfileRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is org.springframework.data.repository.query.QueryCreationException: Could not create query for public abstract java.lang.Integer com.company.repository.ProfileRepository.updateProfileAttach(java.lang.Integer,java.lang.String)! Reason: Using named parameters for method public abstract java.lang.Integer com.company.repository.ProfileRepository.updateProfileAttach(java.lang.Integer,java.lang.String) but parameter 'Optional[aId]' not found in annotated query 'update ProfileEntity set photo.id = :photo where id=:id'!; nested exception is java.lang.IllegalStateException: Using named parameters for method public abstract java.lang.Integer com.company.repository.ProfileRepository.updateProfileAttach(java.lang.Integer,java.lang.String) but parameter 'Optional[aId]' not found in annotated query 'update ProfileEntity set photo.id = :photo where id=:id'!
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:659)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:639)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1389)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1309)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:656)
+	... 20 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'profileRepository' defined in com.company.repository.ProfileRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Invocation of init method failed; nested exception is org.springframework.data.repository.query.QueryCreationException: Could not create query for public abstract java.lang.Integer com.company.repository.ProfileRepository.updateProfileAttach(java.lang.Integer,java.lang.String)! Reason: Using named parameters for method public abstract java.lang.Integer com.company.repository.ProfileRepository.updateProfileAttach(java.lang.Integer,java.lang.String) but parameter 'Optional[aId]' not found in annotated query 'update ProfileEntity set photo.id = :photo where id=:id'!; nested exception is java.lang.IllegalStateException: Using named parameters for method public abstract java.lang.Integer com.company.repository.ProfileRepository.updateProfileAttach(java.lang.Integer,java.lang.String) but parameter 'Optional[aId]' not found in annotated query 'update ProfileEntity set photo.id = :photo where id=:id'!
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1389)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1309)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:656)
+	... 34 common frames omitted
+Caused by: org.springframework.data.repository.query.QueryCreationException: Could not create query for public abstract java.lang.Integer com.company.repository.ProfileRepository.updateProfileAttach(java.lang.Integer,java.lang.String)! Reason: Using named parameters for method public abstract java.lang.Integer com.company.repository.ProfileRepository.updateProfileAttach(java.lang.Integer,java.lang.String) but parameter 'Optional[aId]' not found in annotated query 'update ProfileEntity set photo.id = :photo where id=:id'!; nested exception is java.lang.IllegalStateException: Using named parameters for method public abstract java.lang.Integer com.company.repository.ProfileRepository.updateProfileAttach(java.lang.Integer,java.lang.String) but parameter 'Optional[aId]' not found in annotated query 'update ProfileEntity set photo.id = :photo where id=:id'!
+	at org.springframework.data.repository.query.QueryCreationException.create(QueryCreationException.java:101)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lookupQuery(QueryExecutorMethodInterceptor.java:106)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lambda$mapMethodsToQuery$1(QueryExecutorMethodInterceptor.java:94)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.Iterator.forEachRemaining(Iterator.java:133)
+	at java.base/java.util.Collections$UnmodifiableCollection$1.forEachRemaining(Collections.java:1061)
+	at java.base/java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1845)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.mapMethodsToQuery(QueryExecutorMethodInterceptor.java:96)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lambda$new$0(QueryExecutorMethodInterceptor.java:86)
+	at java.base/java.util.Optional.map(Optional.java:260)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.<init>(QueryExecutorMethodInterceptor.java:86)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport.getRepository(RepositoryFactorySupport.java:364)
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.lambda$afterPropertiesSet$5(RepositoryFactoryBeanSupport.java:322)
+	at org.springframework.data.util.Lazy.getNullable(Lazy.java:230)
+	at org.springframework.data.util.Lazy.get(Lazy.java:114)
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.afterPropertiesSet(RepositoryFactoryBeanSupport.java:328)
+	at org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean.afterPropertiesSet(JpaRepositoryFactoryBean.java:144)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	... 44 common frames omitted
+Caused by: java.lang.IllegalStateException: Using named parameters for method public abstract java.lang.Integer com.company.repository.ProfileRepository.updateProfileAttach(java.lang.Integer,java.lang.String) but parameter 'Optional[aId]' not found in annotated query 'update ProfileEntity set photo.id = :photo where id=:id'!
+	at org.springframework.data.jpa.repository.query.JpaQueryMethod.assertParameterNamesInAnnotatedQuery(JpaQueryMethod.java:172)
+	at org.springframework.data.jpa.repository.query.JpaQueryMethod.<init>(JpaQueryMethod.java:139)
+	at org.springframework.data.jpa.repository.query.DefaultJpaQueryMethodFactory.build(DefaultJpaQueryMethodFactory.java:44)
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$AbstractQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:87)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lookupQuery(QueryExecutorMethodInterceptor.java:102)
+	... 66 common frames omitted
