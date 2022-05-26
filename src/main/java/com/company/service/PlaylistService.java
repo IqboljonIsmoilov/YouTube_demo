@@ -9,19 +9,19 @@ import com.company.exception.AppBadRequestException;
 import com.company.exception.AppForbiddenException;
 import com.company.exception.ItemNotFoundException;
 import com.company.repository.PlaylistRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 
+@RequiredArgsConstructor
 @Service
 public class PlaylistService {
 
-    @Autowired
-    private PlaylistRepository playlistRepository;
-    @Autowired
-    private ChannelService channelService;
+    private final PlaylistRepository playlistRepository;
+
+    private final ChannelService channelService;
 
 
     public PlaylistDTO create(PlaylistDTO dto, String channelId, String profileId) {
@@ -30,7 +30,6 @@ public class PlaylistService {
         if (!channelEntity.getProfileId().equals(profileId)) {
             throw new AppForbiddenException("Not access!");
         }
-
         PlaylistEntity entity = new PlaylistEntity();
         entity.setName(dto.getName());
         entity.setDescription(dto.getDescription());
@@ -77,12 +76,14 @@ public class PlaylistService {
         return toDTO(entity);
     }
 
+
     public PlaylistEntity getById(String id) {
         return playlistRepository.findById(id)
                 .orElseThrow(() -> {
                     throw new ItemNotFoundException("Not found!");
                 });
     }
+
 
     public Object delete(String playlistId, String idFromHeader) {
         return null;

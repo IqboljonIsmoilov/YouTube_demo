@@ -8,7 +8,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class PlaylistVideoDTO extends TimeAndIdDTO{
+public class PlaylistVideoDTO extends TimeAndIdDTO {
 
     private Integer playlistId;
     private Integer videotId;

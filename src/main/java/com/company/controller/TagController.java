@@ -7,22 +7,22 @@ import com.company.util.JwtUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.Authorization;
+import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
+@RequiredArgsConstructor
 @RestController
 @RequestMapping("/tag")
 @Api(tags = "Tag")
 public class TagController {
 
-    @Autowired
-    private TagService tagService;
+    private final TagService tagService;
     private Logger log = LoggerFactory.getLogger(TagController.class);
 
     @ApiOperation(value = "create", notes = "Mathod used for create", nickname = "nicname")
@@ -47,7 +47,7 @@ public class TagController {
 
     @ApiOperation(value = "Delete", notes = "Method used for delete tag",
             authorizations = @Authorization(value = "JWT Token"))
-    @DeleteMapping("/adm/{id}/delete")
+    @DeleteMapping("/adm/{id}")
     public ResponseEntity<?> delete(@PathVariable("id") String id,
                                     HttpServletRequest request) {
         log.info("DELETE {}", id);
@@ -63,5 +63,4 @@ public class TagController {
         log.info("LIST page={} size={}", page, size);
         return ResponseEntity.ok(tagService.list(page, size));
     }
-
 }

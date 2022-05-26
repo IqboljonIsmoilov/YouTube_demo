@@ -14,6 +14,7 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "tag")
 public class TagEntity {
+
     @Id
     private Integer id;
     @Column

@@ -10,25 +10,24 @@ import com.company.enums.VideoStatus;
 import com.company.exception.AppForbiddenException;
 import com.company.exception.ItemNotFoundException;
 import com.company.repository.VideoRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.Optional;
 
+@RequiredArgsConstructor
 @Service
 public class VideoService {
 
-    @Autowired
-    public VideoRepository videoRepository;
+    public final VideoRepository videoRepository;
 
-    @Autowired
-    private ChannelService channelService;
-    @Autowired
-    private CategoryService categoryService;
-    @Autowired
-    private AttachService attachService;
+    private final ChannelService channelService;
+
+    private final CategoryService categoryService;
+
+    private final AttachService attachService;
 
     @Value("${server.domain.name}")
     private String domainName;
@@ -40,10 +39,10 @@ public class VideoService {
         if (!channelEntity.getProfileId().equals(profileId)) {
             throw new AppForbiddenException("Not access!");
         }
-
         CategoryEntity categoryEntity = categoryService.getById(dto.getCategoryId().toString());
         AttachEntity attachEntity = attachService.getById(dto.getVideoId());
         VideoEntity entity = new VideoEntity();
+
         entity.setTitle(dto.getTitle());
         entity.setDescription(dto.getDescription());
 
@@ -53,6 +52,7 @@ public class VideoService {
         entity.setCategoryId(categoryEntity.getId());
         entity.setAttachId(attachEntity.getId());
         entity.setChannelId(Integer.valueOf(channelEntity.getId()));
+
         videoRepository.save(entity);
         return toDTO(entity);
     }
@@ -64,13 +64,11 @@ public class VideoService {
         if (!entity.getChannel().getProfileId().toString().equals(profileId)) {
             throw new AppForbiddenException("Not access!");
         }
-
         entity.setTitle(dto.getTitle());
         entity.setDescription(dto.getDescription());
         entity.setUpdatedDate(LocalDateTime.now());
 
         videoRepository.save(entity);
-
         return toDTO(entity);
     }
 
@@ -81,7 +79,6 @@ public class VideoService {
         if (!entity.getChannel().getProfileId().toString().equals(profileId)) {
             throw new AppForbiddenException("Not access!");
         }
-
         videoRepository.updateVisible(entity.getId().toString());
 
         attachService.delete(entity.getAttachId().toString());
@@ -89,9 +86,9 @@ public class VideoService {
         if (Optional.ofNullable(entity.getPreviewAttachId()).isPresent()) {
             attachService.delete(entity.getPreviewAttachId().toString());
         }
-
         return true;
     }
+
 
     public Object update(Integer id, VideoDTO dto) {
         return null;
@@ -99,10 +96,9 @@ public class VideoService {
 
 
     public VideoEntity getById(String id) {
-        return videoRepository.findByIdAndVisible(id, true)
-                .orElseThrow(() -> {
-                    throw new ItemNotFoundException("Not found!");
-                });
+        return videoRepository.findByIdAndVisible(id, true).orElseThrow(() -> {
+            throw new ItemNotFoundException("Not found!");
+        });
     }
 
 

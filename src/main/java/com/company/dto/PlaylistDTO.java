@@ -1,13 +1,11 @@
 package com.company.dto;
 
-import com.company.entity.ChannelEntity;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Positive;
 
 @Setter
 @Getter
@@ -21,7 +19,6 @@ public class PlaylistDTO extends IdNameKeyDecDTO {
 
     @NotNull(message = "not null")
     private Integer orderNum;
-
 
     private String status;
 }

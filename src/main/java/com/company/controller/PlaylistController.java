@@ -8,22 +8,22 @@ import com.company.util.JwtUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.Authorization;
+import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
+@RequiredArgsConstructor
 @RestController
 @RequestMapping("/playlist")
 @Api(tags = "Playlist")
 public class PlaylistController {
 
-    @Autowired
-    private PlaylistService playlistService;
+    private final PlaylistService playlistService;
     private Logger log = LoggerFactory.getLogger(PlaylistController.class);
 
     @ApiOperation(value = "create", notes = "Mathod used for create", nickname = "nickname")
@@ -34,7 +34,6 @@ public class PlaylistController {
         log.info("Playlist_create: {}", dto);
         return ResponseEntity.ok(playlistService.create(dto, channelId,
                 JwtUtil.getIdFromHeader(request, ProfileRole.USER)));
-
     }
 
     @ApiOperation(value = "Update About", notes = "Method used for update about of playlist",
@@ -49,7 +48,8 @@ public class PlaylistController {
     }
 
 
-    @ApiOperation(value = "Delete", notes = "Method used for delete playlist only owner delete own playlists", authorizations = @Authorization(value = "JWT Token"))
+    @ApiOperation(value = "Delete", notes = "Method used for delete playlist only owner delete own playlists",
+            authorizations = @Authorization(value = "JWT Token"))
     @DeleteMapping("/public/{playlistId}/delete")
     public ResponseEntity<?> delete(@PathVariable("playlistId") String playlistId,
                                     HttpServletRequest request) {

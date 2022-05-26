@@ -18,18 +18,15 @@ public class VideoLikeEntity {
     @Column
     private LocalDateTime createdDate;
 
-
     @Column(name = "video_id")
     private Integer videoId;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "video_id", insertable = false, updatable = false)
     private PlaylistEntity video;
 
-
     @Column(name = "profile_id")
     private String profileId;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "profile_id", insertable = false, updatable = false)
     private ProfileEntity profile;
-
 }

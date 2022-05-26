@@ -6,17 +6,18 @@ import com.company.enums.ProfileRole;
 import com.company.exception.AppForbiddenException;
 import com.company.exception.ItemNotFoundException;
 import com.company.repository.CommentRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.*;
 import org.springframework.stereotype.Service;
 
 import java.util.LinkedList;
 import java.util.List;
 
+@RequiredArgsConstructor
 @Service
 public class CommentService {
-    @Autowired
-    private CommentRepository commentRepository;
+
+    private final CommentRepository commentRepository;
 
     public CommentDTO create(CommentDTO dto, String pId) {
 
@@ -30,6 +31,7 @@ public class CommentService {
         return dto;
     }
 
+
     public boolean update(Integer commentId, CommentDTO dto, Integer pId) {
         CommentEntity commentEntity = get(commentId);
 
@@ -42,6 +44,7 @@ public class CommentService {
         return true;
     }
 
+
     public boolean delete(Integer commentId, Integer pId, ProfileRole role) {
         CommentEntity commentEntity = get(commentId);
         if (commentEntity.getProfileId().equals(pId) || role.equals(ProfileRole.ADMIN)) {
@@ -50,6 +53,7 @@ public class CommentService {
         }
         throw new AppForbiddenException("Not Access");
     }
+
 
     public PageImpl<CommentDTO> listByArticleId(Integer articleId, int page, int size) {
         Pageable pageable = PageRequest.of(page, size,
@@ -64,6 +68,7 @@ public class CommentService {
         return new PageImpl<CommentDTO>(commentDTOList, pageable, pageList.getTotalElements());
     }
 
+
     public PageImpl<CommentDTO> listByProfileId(Integer profileId, int page, int size) {
         Pageable pageable = PageRequest.of(page, size,
                 Sort.by(Sort.Direction.DESC, "createdDate"));
@@ -76,6 +81,7 @@ public class CommentService {
         }
         return new PageImpl<CommentDTO>(commentDTOList, pageable, pageList.getTotalElements());
     }
+
 
     public PageImpl<CommentDTO> list(int page, int size) {
         Pageable pageable = PageRequest.of(page, size,
@@ -90,11 +96,13 @@ public class CommentService {
         return new PageImpl<CommentDTO>(commentDTOList, pageable, pageList.getTotalElements());
     }
 
+
     public CommentEntity get(Integer commentId) {
         return commentRepository.findById(commentId).orElseThrow(() -> {
             throw new ItemNotFoundException("Comment Not found");
         });
     }
+
 
     public CommentDTO toDTO(CommentEntity entity) {
         CommentDTO dto = new CommentDTO();
@@ -105,5 +113,4 @@ public class CommentService {
 
         return dto;
     }
-
 }

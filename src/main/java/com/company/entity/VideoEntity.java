@@ -11,6 +11,7 @@ import java.time.LocalDateTime;
 @Setter
 @Table(name = "video")
 public class VideoEntity {
+
     @Id
     private Integer id;
     @Column
@@ -37,7 +38,6 @@ public class VideoEntity {
 
     @Column
     private Long duration;
-
 
 
     @Column(name = "channel_id")

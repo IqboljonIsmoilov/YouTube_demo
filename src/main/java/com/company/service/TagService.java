@@ -2,24 +2,23 @@ package com.company.service;
 
 import com.company.dto.TagDTO;
 import com.company.entity.TagEntity;
-import com.company.exception.AppBadRequestException;
 import com.company.exception.ItemNotFoundException;
 import com.company.repository.TagRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.DataIntegrityViolationException;
+import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.*;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
+@RequiredArgsConstructor
 @Service
 public class TagService {
 
-    @Autowired
-    private TagRepository tagRepository;
+
+    private final TagRepository tagRepository;
+
 
     public TagDTO create(TagDTO dto) {
         TagEntity entity = new TagEntity();
@@ -27,6 +26,7 @@ public class TagService {
 
         return toDTO(entity);
     }
+
 
     public PageImpl<TagDTO> list(int page, int size) {
         Pageable pageable = PageRequest.of(page, size, Sort.by(Sort.Direction.DESC, "createdDate"));
@@ -41,14 +41,15 @@ public class TagService {
         return new PageImpl<>(dtoList, pageable, entityPage.getTotalElements());
     }
 
+
     public TagDTO update(String id, TagDTO dto) {
         TagEntity entity = get(id);
         entity.setName("#" + dto.getName());
         entity.setUpdatedDate(LocalDateTime.now());
 
         return toDTO(entity);
-
     }
+
 
     public Boolean delete(String id) {
         TagEntity entity = get(id);
@@ -56,12 +57,14 @@ public class TagService {
         return true;
     }
 
+
     public TagEntity get(String id) {
         return tagRepository.findById(id)
                 .orElseThrow(() -> {
                     return new ItemNotFoundException("Not Found!");
                 });
     }
+
 
     public TagDTO toDTO(TagEntity entity) {
         TagDTO dto = new TagDTO();
@@ -71,5 +74,4 @@ public class TagService {
         dto.setCreatedDate(entity.getCreatedDate());
         return dto;
     }
-
 }

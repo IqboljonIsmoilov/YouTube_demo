@@ -11,7 +11,7 @@ import com.company.exception.AppBadRequestException;
 import com.company.exception.AppForbiddenException;
 import com.company.exception.ItemNotFoundException;
 import com.company.repository.ChannelRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.*;
@@ -21,14 +21,14 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-
+@RequiredArgsConstructor
 @Service
 public class ChannelService {
 
-    @Autowired
-    private ChannelRepository channelRepository;
-    @Autowired
-    private ProfileService profileService;
+
+    private final ChannelRepository channelRepository;
+
+    private final ProfileService profileService;
 
     @Value("${server.domain.name}")
     private String domainName;
@@ -56,6 +56,7 @@ public class ChannelService {
                     throw new ItemNotFoundException("Not found!");
                 });
     }
+
 
     public ChannelDTO get(String id) {
         ChannelEntity entity = getById(id);
@@ -110,6 +111,7 @@ public class ChannelService {
         });
         return new PageImpl<>(dtoList, pageable, entityPage.getTotalElements());
     }
+
 
     public ChannelDTO toDTO(ChannelEntity entity) {
         ChannelDTO dto = new ChannelDTO();

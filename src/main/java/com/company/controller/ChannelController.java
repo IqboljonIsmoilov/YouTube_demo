@@ -9,22 +9,23 @@ import com.company.util.JwtUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.Authorization;
+import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
+
+@RequiredArgsConstructor
 @RestController
 @RequestMapping("/channel")
 @Api(tags = "Channel")
 public class ChannelController {
 
-    @Autowired
-    private ChannelService channelService;
+    private final ChannelService channelService;
     private Logger log = LoggerFactory.getLogger(ChannelController.class);
 
 
@@ -51,8 +52,8 @@ public class ChannelController {
             authorizations = @Authorization(value = "JWT Token"))
     @PutMapping("/public/{channelId}")
     public ResponseEntity<?> updateChannel(@RequestBody @Valid ChannelUpdateDTO dto,
-                                         @PathVariable("channelId") String channelId,
-                                         HttpServletRequest request) {
+                                           @PathVariable("channelId") String channelId,
+                                           HttpServletRequest request) {
         log.info("UPDATE about {}", dto);
         return ResponseEntity.ok(channelService.updateChannel(dto, channelId, JwtUtil.getIdFromHeader(request)));
     }
@@ -62,8 +63,8 @@ public class ChannelController {
             authorizations = @Authorization(value = "JWT Token"))
     @PutMapping("/public/image/{channelId}")
     public ResponseEntity<?> updateChannelPhoto(@RequestBody @Valid AttachDTO dto,
-                                          @PathVariable("channelId") String channelId,
-                                          HttpServletRequest request) {
+                                                @PathVariable("channelId") String channelId,
+                                                HttpServletRequest request) {
         log.info("/public/image/{channelId} {}", dto);
         return ResponseEntity.ok(channelService.updateChannelPhoto(dto.getId(), channelId, JwtUtil.getIdFromHeader(request)));
     }

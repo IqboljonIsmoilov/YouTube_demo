@@ -25,8 +25,6 @@ public class VideoDTO extends IdNameKeyDecDTO {
 
     @NotBlank(message = "VideoId required")
     private String videoId;
-
-
 }
 
 

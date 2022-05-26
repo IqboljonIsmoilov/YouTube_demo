@@ -29,7 +29,6 @@ public class ProfileEntity {
     @Column
     private LocalDateTime UpdatedDate;
 
-
     @Column
     @Enumerated(EnumType.STRING)
     private ProfileRole role;
@@ -41,5 +40,4 @@ public class ProfileEntity {
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "attach_id")
     private AttachEntity photo;
-
 }

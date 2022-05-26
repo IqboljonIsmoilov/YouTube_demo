@@ -13,6 +13,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ProfileJwtDTO {
+
     private Integer id;
     private ProfileRole role;
 }

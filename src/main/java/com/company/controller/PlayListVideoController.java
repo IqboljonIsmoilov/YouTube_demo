@@ -3,32 +3,29 @@ package com.company.controller;
 import com.company.dto.PlaylistVideoDTO;
 import com.company.dto.PlaylistVideoIdDTO;
 import com.company.dto.UpdateOrderNumDTO;
-import com.company.enums.ProfileRole;
 import com.company.service.PlayListVideoService;
 import com.company.util.JwtUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.Authorization;
+import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
-
+@RequiredArgsConstructor
 @RestController
 @RequestMapping("/playListVideo")
 @Api(tags = "playListVideo")
 public class PlayListVideoController {
 
-    @Autowired
-    private PlayListVideoService playListVideoService;
+    private final PlayListVideoService playListVideoService;
 
     private Logger log = LoggerFactory.getLogger(AuthController.class);
-
 
 
     @ApiOperation(value = "Create", notes = "Method used for add video to playlist",
@@ -58,6 +55,4 @@ public class PlayListVideoController {
         log.info("/public/delete {}", dto);
         return ResponseEntity.ok(playListVideoService.delete(dto, JwtUtil.getIdFromHeader(request)));
     }
-
-
 }

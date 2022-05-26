@@ -1,6 +1,8 @@
 package com.company.service;
 
-import com.company.dto.*;
+import com.company.dto.PlaylistVideoDTO;
+import com.company.dto.PlaylistVideoIdDTO;
+import com.company.dto.UpdateOrderNumDTO;
 import com.company.entity.PlaylistEntity;
 import com.company.entity.PlaylistVideoEntity;
 import com.company.entity.VideoEntity;
@@ -9,22 +11,20 @@ import com.company.exception.AppForbiddenException;
 import com.company.exception.ItemNotFoundException;
 import com.company.repository.PlaylistRepository;
 import com.company.repository.PlaylistVideoRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
-import java.util.UUID;
 
+@RequiredArgsConstructor
 @Service
 public class PlayListVideoService {
 
 
-    @Autowired
-    private PlaylistVideoRepository playlistVideoRepository;
-    @Autowired
-    private VideoService videoService;
-    @Autowired
-    private PlaylistRepository  playlistRepository;
+    private final PlaylistVideoRepository playlistVideoRepository;
+    private final VideoService videoService;
+
+    private final PlaylistRepository playlistRepository;
 
 
     public PlaylistVideoDTO create(PlaylistVideoDTO dto, String profileId) {
@@ -45,6 +45,7 @@ public class PlayListVideoService {
 
         return toDTO(entity);
     }
+
 
     public PlaylistVideoDTO update(UpdateOrderNumDTO dto, String playlistVideoId, String profileId) {
         PlaylistVideoEntity entity = getById(playlistVideoId);
@@ -73,6 +74,7 @@ public class PlayListVideoService {
         return true;
     }
 
+
     public PlaylistVideoEntity getByPlaylistIdAndVideoId(String playlistId, String videoId) {
         return playlistVideoRepository
                 .findByPlaylistIdAndVideoId(playlistId, videoId)
@@ -89,13 +91,14 @@ public class PlayListVideoService {
                 });
     }
 
+
     public PlaylistVideoEntity getById(String id) {
         return playlistVideoRepository.findById(id)
                 .orElseThrow(() -> {
                     throw new ItemNotFoundException("Not found!");
                 });
-
     }
+
 
     public PlaylistVideoDTO toDTO(PlaylistVideoEntity entity) {
         PlaylistVideoDTO dto = new PlaylistVideoDTO();

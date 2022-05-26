@@ -6,7 +6,7 @@ import com.company.exception.AppBadRequestException;
 import com.company.exception.DownloadNotFoundException;
 import com.company.exception.ItemNotFoundException;
 import com.company.repository.AttachRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
@@ -29,10 +29,11 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.UUID;
 
+@RequiredArgsConstructor
 @Service
 public class AttachService {
-    @Autowired
-    private AttachRepository attachRepository;
+
+    private final AttachRepository attachRepository;
 
     @Value("${attach.upload.folder}")
     private String attachFolder;
@@ -62,6 +63,7 @@ public class AttachService {
         return dto;
     }
 
+
     public Boolean delete(String id) {
         AttachEntity entity = get(id);
 
@@ -73,6 +75,7 @@ public class AttachService {
         } else
             throw new AppBadRequestException("Could not read the file!");
     }
+
 
     public byte[] open(String id) {
         byte[] data;
@@ -95,6 +98,7 @@ public class AttachService {
         });
     }
 
+
     public ResponseEntity<Resource> download(String id) {
         try {
             AttachEntity entity = get(id);
@@ -116,17 +120,20 @@ public class AttachService {
         }
     }
 
+
     public AttachEntity get(String id) {
         return attachRepository.findById(id).orElseThrow(() -> {
             throw new ItemNotFoundException("Attach not found");
         });
     }
 
+
     public AttachDTO getId(String id) {
         return toDTO(attachRepository.findById(id).orElseThrow(() -> {
             throw new ItemNotFoundException("Attach not found");
         }));
     }
+
 
     public AttachEntity saveAttach(String key, String pathFolder, String type, MultipartFile file) {
         AttachEntity entity = new AttachEntity();
@@ -140,6 +147,7 @@ public class AttachService {
         return entity;
     }
 
+
     public AttachDTO toDTO(AttachEntity entity) {
         AttachDTO dto = new AttachDTO();
         dto.setCreatedDate(entity.getCreatedDate());
@@ -150,10 +158,12 @@ public class AttachService {
         return dto;
     }
 
+
     public String getExtension(String fileName) {
         int lastIndex = fileName.lastIndexOf(".");
         return fileName.substring(lastIndex + 1);
     }
+
 
     private String getYmDString() {
         int year = Calendar.getInstance().get(Calendar.YEAR);
@@ -161,6 +171,7 @@ public class AttachService {
         int day = Calendar.getInstance().get(Calendar.DATE);
         return year + "/" + month + "/" + day;
     }
+
 
     public List<AttachDTO> pagination(int page, int size) {
         Pageable pageable = PageRequest.of(page, size, Sort.by(Sort

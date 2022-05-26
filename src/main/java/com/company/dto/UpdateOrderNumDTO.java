@@ -17,5 +17,4 @@ public class UpdateOrderNumDTO {
     @NotNull(message = "OrderNum required")
     @Positive(message = "Invalid OrderNum")
     private Integer orderNum;
-
 }

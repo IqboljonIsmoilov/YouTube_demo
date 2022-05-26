@@ -12,6 +12,7 @@ import javax.validation.constraints.Size;
 @Setter
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class RegistrationDTO {
+
     @NotNull(message = "Name cannot be null")
     private String name;
     @NotNull(message = "Name cannot be null")

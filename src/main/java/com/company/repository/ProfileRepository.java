@@ -15,7 +15,6 @@ public interface ProfileRepository extends JpaRepository<ProfileEntity, String> 
 
     Optional<ProfileEntity> findByEmail(String email);
 
-
     Optional<ProfileEntity> findById(String id);
 
     Optional<ProfileEntity> findByNameAndSurname(String name, String surname);
@@ -38,16 +37,9 @@ public interface ProfileRepository extends JpaRepository<ProfileEntity, String> 
                                 @Param("id") String id);
 
 
-   /* @Transactional
-    @Modifying
-    @Query("update ProfileEntity set photo.id = :photo where id=:id")
-    Integer updateProfileAttach(@Param("id") Integer id,
-                                @Param("aId") String aId);*/
-
-
     @Transactional
     @Modifying
     @Query("update ProfileEntity set status = :status where id = :id")
     int updateStatus(@Param("status") ProfileStatus status,
-                     @Param("id") String  id);
+                     @Param("id") String id);
 }

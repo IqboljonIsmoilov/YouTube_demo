@@ -5,7 +5,7 @@ import com.company.entity.EmailEntity;
 import com.company.enums.EmailType;
 import com.company.exception.ItemNotFoundException;
 import com.company.repository.EmailRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -16,13 +16,15 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
+@RequiredArgsConstructor
 @Service
 public class EmailService {
 
-    @Autowired
-    private JavaMailSender javaMailSender;
-    @Autowired
-    private EmailRepository emailRepository;
+
+    private final JavaMailSender javaMailSender;
+
+    private final EmailRepository emailRepository;
+
 
     public void send(String toEmail, String title, String content) {
         SimpleMailMessage simple = new SimpleMailMessage();
@@ -37,6 +39,7 @@ public class EmailService {
         emailRepository.save(entity);
     }
 
+
     public List<EmailDTO> paginationList(int page, int size) {
         Pageable pageable = PageRequest.of(page, size, Sort.by(Sort.Direction.DESC, "sendDate"));
 
@@ -48,12 +51,14 @@ public class EmailService {
         return dtoList;
     }
 
+
     public Boolean delete(Integer id) {
         emailRepository.findById(id).orElseThrow(() -> new ItemNotFoundException("Not found!"));
 
         emailRepository.deleteById(id);
         return true;
     }
+
 
     private EmailDTO toDTO(EmailEntity entity) {
         EmailDTO dto = new EmailDTO();

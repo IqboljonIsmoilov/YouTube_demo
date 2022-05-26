@@ -11,13 +11,10 @@ import java.time.LocalDateTime;
 @Setter
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SubscriptionDTO {
-    private Integer id;
 
+    private Integer id;
     private Integer profile_id;
     private Integer channel_id;
     private LocalDateTime created_date;
-
-// status (active,block),notification_type(All,Personalized,Non)
-
 }
 

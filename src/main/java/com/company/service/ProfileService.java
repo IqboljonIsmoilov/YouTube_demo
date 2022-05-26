@@ -1,13 +1,12 @@
 package com.company.service;
 
-import com.company.dto.AttachDTO;
 import com.company.dto.ProfileDTO;
 import com.company.entity.ProfileEntity;
 import com.company.enums.ProfileStatus;
 import com.company.exception.EmailAlreadyExistsException;
 import com.company.exception.ItemNotFoundException;
 import com.company.repository.ProfileRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.*;
 import org.springframework.stereotype.Service;
@@ -17,10 +16,11 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
+@RequiredArgsConstructor
 @Service
 public class ProfileService {
-    @Autowired
-    private ProfileRepository profileRepository;
+
+    private final ProfileRepository profileRepository;
 
     @Value("${server.domain.name}")
     private String domainName;
@@ -43,11 +43,13 @@ public class ProfileService {
         return dto;
     }
 
+
     public void Email(String email) {
         profileRepository.findByEmail(email).ifPresent(profileEntity -> {
             throw new EmailAlreadyExistsException("Email already used!");
         });
     }
+
 
     public String updateEmail(ProfileDTO dto, String id) {
         Optional<ProfileEntity> optional = profileRepository.findByEmail(dto.getEmail());
@@ -75,6 +77,7 @@ public class ProfileService {
         return dto;
     }
 
+
     public String updateProfileDetail(ProfileDTO dto, String id) {
         Optional<ProfileEntity> optional = profileRepository.findByNameAndSurname(dto.getName(), dto.getSurname());
 
@@ -86,6 +89,7 @@ public class ProfileService {
         return "not Update";
     }
 
+
     public String toOpenUrl(String id) {
         return domainName + "profile/" + id;
     }
@@ -96,6 +100,7 @@ public class ProfileService {
             return new ItemNotFoundException("Not Found!");
         });
     }
+
 
     public PageImpl<ProfileDTO> list(int page, int size) {
         Pageable pageable = PageRequest.of(page, size, Sort.by(Sort.Direction.DESC, "createdDate"));
@@ -123,6 +128,7 @@ public class ProfileService {
         dto.setUpdatedDate(entity.getUpdatedDate());
         return dto;
     }
+
 
     public Object updateProfileAttach(String pId, String id) {
         return null;

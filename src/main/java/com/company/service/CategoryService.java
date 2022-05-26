@@ -5,8 +5,8 @@ import com.company.entity.CategoryEntity;
 import com.company.exception.AppBadRequestException;
 import com.company.exception.ItemNotFoundException;
 import com.company.repository.CategoryRepository;
-import io.swagger.models.auth.In;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
@@ -14,15 +14,15 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
-import java.util.UUID;
 
+@RequiredArgsConstructor
 @Service
 public class CategoryService {
 
+    @Value("${server.domain.name}")
     private String domainName;
-    @Autowired
-    private CategoryRepository categoryRepository;
+
+    private final CategoryRepository categoryRepository;
 
 
     public CategoryDTO created(CategoryDTO dto) {
@@ -37,12 +37,14 @@ public class CategoryService {
         return toDTO(entity);
     }
 
+
     public CategoryEntity getById(String id) {
         return categoryRepository.findById(id)
                 .orElseThrow(() -> {
                     return new ItemNotFoundException("Not Found!");
                 });
     }
+
 
     public CategoryDTO get(String categoryId) {
         CategoryEntity entity = getById(categoryId);
@@ -71,6 +73,7 @@ public class CategoryService {
         }
         return toDTO(entity);
     }
+
 
     public String toOpenUrl(String id) {
         return domainName + "category/" + id;

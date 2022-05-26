@@ -6,9 +6,9 @@ import com.company.util.JwtUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.Authorization;
+import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -16,13 +16,13 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 
+@RequiredArgsConstructor
 @RestController
 @RequestMapping("/attach")
 @Api(tags = "Atach")
 public class AttachController {
 
-    @Autowired
-    private AttachService attachService;
+    private final AttachService attachService;
 
     private Logger log = LoggerFactory.getLogger(AttachController.class);
 

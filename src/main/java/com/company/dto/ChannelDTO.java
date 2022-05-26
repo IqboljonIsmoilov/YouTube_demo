@@ -1,7 +1,5 @@
 package com.company.dto;
 
-import com.company.entity.AttachEntity;
-import com.company.entity.ProfileEntity;
 import com.company.enums.ChannelStatus;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Getter;

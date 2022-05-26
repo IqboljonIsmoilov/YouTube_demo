@@ -25,11 +25,9 @@ public class PlaylistEntity {
     @Column
     private LocalDateTime UpdatedDate;
 
-
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private PlaylistStatus status;
-
 
     @Column(name = "order_num", nullable = false)
     private Integer orderNum;

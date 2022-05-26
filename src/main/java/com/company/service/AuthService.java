@@ -13,22 +13,23 @@ import com.company.exception.PasswordOrEmailWrongException;
 import com.company.repository.ProfileRepository;
 import com.company.util.JwtUtil;
 import io.jsonwebtoken.JwtException;
+import lombok.RequiredArgsConstructor;
 import org.apache.commons.codec.digest.DigestUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 import java.util.UUID;
 
+@RequiredArgsConstructor
 @Service
 public class AuthService {
 
-    @Autowired
-    private ProfileRepository profileRepository;
-    @Autowired
-    private EmailService emailService;
-    @Autowired
-    private AttachService attachService;
+    private final ProfileRepository profileRepository;
+
+    private final EmailService emailService;
+
+    private final AttachService attachService;
+
 
     public ProfileDTO login(AuthDTO dto) {
         String pswd = DigestUtils.md5Hex(dto.getPassword());
@@ -42,7 +43,6 @@ public class AuthService {
         if (!entity.getStatus().equals(ProfileStatus.ACTIVE)) {
             throw new AppForbiddenException("No Access");
         }
-
         ProfileDTO profile = new ProfileDTO();
 
         profile.setJwt(JwtUtil.encode(Integer.valueOf(entity.getId().toString()), entity.getRole()));
@@ -54,8 +54,8 @@ public class AuthService {
         return profile;
     }
 
-    public String registration(RegistrationDTO dto) {
 
+    public String registration(RegistrationDTO dto) {
 
         Optional<ProfileEntity> optional = profileRepository.findByEmail(dto.getEmail());
         if (optional.isPresent()) {
@@ -103,5 +103,4 @@ public class AuthService {
         emailService.send(entity.getEmail(), "Activate Your Registration", builder.toString());
 
     }*/
-
 }

@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 @Table(name = "email_history")
 @Getter
 @Setter
-public class EmailEntity{
+public class EmailEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -5,19 +5,17 @@ import com.company.entity.VideoLikeEntity;
 import com.company.exception.AppForbiddenException;
 import com.company.exception.ItemNotFoundException;
 import com.company.repository.VideoLikeRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.UUID;
-
+@RequiredArgsConstructor
 @Service
 public class VideoLikeService {
 
-    @Autowired
-    private VideoLikeRepository videoLikeRepository;
+
+    private final VideoLikeRepository videoLikeRepository;
 
     public VideoLikeDTO createVideolike(VideoLikeDTO dto) {
-
         VideoLikeEntity entity = new VideoLikeEntity();
 
         entity.setCreatedDate(dto.getCreatedDate());
@@ -29,13 +27,13 @@ public class VideoLikeService {
         return dto;
     }
 
+
     public Boolean remove(String likeId, String profileId) {
         VideoLikeEntity entity = getById(likeId);
 
         if (!entity.getProfileId().toString().equals(profileId)) {
             throw new AppForbiddenException("Not access!");
         }
-
         videoLikeRepository.delete(entity);
         return true;
     }
@@ -47,5 +45,4 @@ public class VideoLikeService {
                     return new ItemNotFoundException("Not found!");
                 });
     }
-
 }

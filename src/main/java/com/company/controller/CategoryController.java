@@ -7,22 +7,23 @@ import com.company.util.JwtUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.Authorization;
+import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
+@RequiredArgsConstructor
 @RestController
 @RequestMapping("/category")
 @Api(tags = "Category")
 public class CategoryController {
 
-    @Autowired
-    private CategoryService categoryService;
+
+    private final CategoryService categoryService;
     private Logger log = LoggerFactory.getLogger(CategoryController.class);
 
 
@@ -59,7 +60,7 @@ public class CategoryController {
 
     @ApiOperation(value = "Delete", notes = "Method used for delete category",
             authorizations = @Authorization(value = "JWT Token"))
-    @DeleteMapping("/adm/{id}/delete")
+    @DeleteMapping("/adm/{id}")
     public ResponseEntity<?> delete(@PathVariable("id") String id,
                                     HttpServletRequest request) {
         log.info("DELETE {}", id);

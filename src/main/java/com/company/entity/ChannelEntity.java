@@ -1,7 +1,6 @@
 package com.company.entity;
 
 import com.company.enums.ChannelStatus;
-import io.swagger.models.auth.In;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -13,6 +12,7 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "channel")
 public class ChannelEntity {
+
     @Id
     private String id;
     @Column
@@ -31,7 +31,7 @@ public class ChannelEntity {
     private ChannelStatus status;
 
     @Column(name = "profile_id")
-    private String  profileId;
+    private String profileId;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "profile_id", insertable = false, updatable = false)
     private ProfileEntity profile;
@@ -44,7 +44,7 @@ public class ChannelEntity {
 
 
     @Column(name = "banner_id")
-    private String  bannerId;
+    private String bannerId;
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "banner_id", insertable = false, updatable = false)
     private AttachEntity banner;
