@@ -1,15 +1,14 @@
 package com.company.controller;
 
-import com.company.dto.ProfileDTO;
 import com.company.enums.ProfileRole;
 import com.company.service.ProfileService;
 import com.company.util.JwtUtil;
+import dto.ProfileDTO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.Authorization;
 import lombok.RequiredArgsConstructor;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,19 +16,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 @RequiredArgsConstructor
+@Slf4j
 @RestController
 @RequestMapping("/profile")
 @Api(tags = "Profile")
 public class ProfileController {
 
     private final ProfileService profileService;
-    private Logger log = LoggerFactory.getLogger(ProfileController.class);
 
 
     @ApiOperation(value = "Get", notes = "Method used for get profile info")
     @GetMapping("/{id}")
     public ResponseEntity<?> get(@PathVariable("id") String id) {
-        log.info("/{id} {}", id);
         return ResponseEntity.ok(profileService.get(id));
     }
 
@@ -37,30 +35,40 @@ public class ProfileController {
     @ApiOperation(value = "Create", notes = "Method used for create",
             authorizations = @Authorization(value = "JWT Token"))
     @PostMapping("/adm")
-    public ResponseEntity<?> create(@RequestBody @Valid ProfileDTO dto,
+    public ResponseEntity<?> create(@RequestBody @Valid ProfileDTO requestDTO,
                                     HttpServletRequest request) {
-        log.info("CREATE {}", dto);
+        log.info("CREATE {}{}", requestDTO, ProfileController.class);
         JwtUtil.getIdFromHeader(request, ProfileRole.ADMIN);
-        return ResponseEntity.ok(profileService.create(dto));
+        return ResponseEntity.ok(profileService.create(requestDTO));
     }
 
 
-    @ApiOperation(value = "updateEmail", notes = "Mathod used for updateEmail", nickname = "nicname")
+    @ApiOperation(value = "updateEmail", notes = "Mathod used for updateEmail")
     @PutMapping("/adm/update{email}")
-    public ResponseEntity<?> updateEmail(@RequestBody @Valid ProfileDTO dto,
+    public ResponseEntity<?> updateEmail(@RequestBody @Valid ProfileDTO updateDTO,
                                          HttpServletRequest request) {
-        log.info("Profile_update: {}", dto);
-        return ResponseEntity.ok(profileService.updateEmail(dto, JwtUtil.getIdFromHeader(request)));
+        log.info("Profile_update: {}{}", updateDTO, ProfileController.class);
+        return ResponseEntity.ok(profileService.updateEmail(updateDTO, JwtUtil.getIdFromHeader(request)));
     }
 
 
-    @ApiOperation(value = "updateProfileDetali", notes = "Mathod used for updateProfileDetali", nickname = "nicname")
+    @ApiOperation(value = "updateProfileDetali", notes = "Mathod used for updateProfileDetali")
     @PutMapping("/updateProfileDetali")
-    public ResponseEntity<?> updateProfileDetali(@RequestBody @Valid ProfileDTO dto,
+    public ResponseEntity<?> updateProfileDetali(@RequestBody @Valid ProfileDTO updateDTO,
                                                  HttpServletRequest request) {
         String id = JwtUtil.getIdFromHeader(request);
-        log.info("Profile_update: {}", dto);
-        return ResponseEntity.ok(profileService.updateProfileDetail(dto, id));
+        log.info("Profile_update: {}{}", updateDTO, ProfileController.class);
+        return ResponseEntity.ok(profileService.updateProfileDetail(updateDTO, id));
+    }
+
+
+    @ApiOperation(value = "updateProfileAttach", notes = "Mathod used for updateProfileAttach", nickname = "nicname")
+    @PutMapping("/updateProfileAttach")
+    public ResponseEntity<?> updateProfileAttach(@PathVariable("id") String id,
+                                                 HttpServletRequest request) {
+        String pId = JwtUtil.getIdFromHeader(request);
+        log.info("Profile_update: {}");
+        return ResponseEntity.ok(profileService.updateProfileAttach(pId, id));
     }
 
 
@@ -73,15 +81,5 @@ public class ProfileController {
         log.info("LIST page={} size={}", page, size);
         JwtUtil.getIdFromHeader(request, ProfileRole.ADMIN);
         return ResponseEntity.ok(profileService.list(page, size));
-    }
-
-
-    @ApiOperation(value = "updateProfileAttach", notes = "Mathod used for updateProfileAttach", nickname = "nicname")
-    @PutMapping("/updateProfileAttach")
-    public ResponseEntity<?> updateProfileAttach(@PathVariable("id") String id,
-                                                 HttpServletRequest request) {
-        String pId = JwtUtil.getIdFromHeader(request);
-        log.info("Profile_update: {}");
-        return ResponseEntity.ok(profileService.updateProfileAttach(pId, id));
     }
 }

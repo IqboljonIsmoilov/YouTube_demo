@@ -1,8 +1,8 @@
 package com.company.service;
 
-import com.company.dto.ChannelDTO;
-import com.company.dto.ChannelUpdateDTO;
-import com.company.dto.ProfileDTO;
+import dto.ChannelDTO;
+import dto.ChannelUpdateDTO;
+import dto.ProfileDTO;
 import com.company.entity.ChannelEntity;
 import com.company.entity.ProfileEntity;
 import com.company.enums.ChannelStatus;

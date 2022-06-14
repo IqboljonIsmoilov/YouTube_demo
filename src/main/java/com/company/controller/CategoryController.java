@@ -1,6 +1,6 @@
 package com.company.controller;
 
-import com.company.dto.CategoryDTO;
+import dto.CategoryDTO;
 import com.company.enums.ProfileRole;
 import com.company.service.CategoryService;
 import com.company.util.JwtUtil;
@@ -8,6 +8,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.Authorization;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
@@ -18,13 +19,13 @@ import javax.validation.Valid;
 
 @RequiredArgsConstructor
 @RestController
+@Slf4j
 @RequestMapping("/category")
 @Api(tags = "Category")
 public class CategoryController {
 
 
     private final CategoryService categoryService;
-    private Logger log = LoggerFactory.getLogger(CategoryController.class);
 
 
     @ApiOperation(value = "Get", notes = "Method used for get category")
@@ -38,23 +39,23 @@ public class CategoryController {
     @ApiOperation(value = "Create", notes = "Method used for create category",
             authorizations = @Authorization(value = "JWT Token"))
     @PostMapping("/adm")
-    public ResponseEntity<?> create(@RequestBody @Valid CategoryDTO dto,
+    public ResponseEntity<?> create(@RequestBody @Valid CategoryDTO requestDTO,
                                     HttpServletRequest request) {
-        log.info("CREATE {}", dto);
+        log.info("CREATE {}{}", requestDTO, CategoryController.class);
         JwtUtil.getIdFromHeader(request, ProfileRole.ADMIN);
-        return ResponseEntity.ok(categoryService.created(dto));
+        return ResponseEntity.ok(categoryService.created(requestDTO));
     }
 
 
     @ApiOperation(value = "update", notes = "Mathod used for update",
             authorizations = @Authorization(value = "JWT Token"))
     @PutMapping("/adm{id}")
-    public ResponseEntity<?> update(@RequestBody @Valid CategoryDTO dto,
+    public ResponseEntity<?> update(@RequestBody @Valid CategoryDTO updateDTO,
                                     @PathVariable("id") String id,
                                     HttpServletRequest request) {
         JwtUtil.getIdFromHeader(request, ProfileRole.ADMIN);
-        log.info("Category_update: {}", dto);
-        return ResponseEntity.ok(categoryService.update(id, dto));
+        log.info("Category_update: {}{}", updateDTO, CategoryController.class);
+        return ResponseEntity.ok(categoryService.update(id, updateDTO));
     }
 
 
@@ -63,7 +64,6 @@ public class CategoryController {
     @DeleteMapping("/adm/{id}")
     public ResponseEntity<?> delete(@PathVariable("id") String id,
                                     HttpServletRequest request) {
-        log.info("DELETE {}", id);
         JwtUtil.getIdFromHeader(request, ProfileRole.ADMIN);
         return ResponseEntity.ok(categoryService.delete(id));
     }
@@ -72,7 +72,6 @@ public class CategoryController {
     @ApiOperation(value = "List", notes = "Method used for get list of category")
     @GetMapping("/public")
     public ResponseEntity<?> list() {
-        log.info("/public");
         return ResponseEntity.ok(categoryService.list());
     }
 }

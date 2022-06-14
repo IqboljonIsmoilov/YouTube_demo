@@ -1,4 +1,4 @@
-package com.company.dto;
+package dto;
 
 import com.company.enums.EmailType;
 import lombok.Getter;

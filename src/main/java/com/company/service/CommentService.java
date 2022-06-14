@@ -1,6 +1,6 @@
 package com.company.service;
 
-import com.company.dto.CommentDTO;
+import dto.CommentDTO;
 import com.company.entity.CommentEntity;
 import com.company.enums.ProfileRole;
 import com.company.exception.AppForbiddenException;

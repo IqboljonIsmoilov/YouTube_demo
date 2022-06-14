@@ -1,6 +1,6 @@
 package com.company.service;
 
-import com.company.dto.TagDTO;
+import dto.TagDTO;
 import com.company.entity.TagEntity;
 import com.company.exception.ItemNotFoundException;
 import com.company.repository.TagRepository;

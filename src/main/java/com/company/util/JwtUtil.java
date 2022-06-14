@@ -1,6 +1,6 @@
 package com.company.util;
 
-import com.company.dto.ProfileJwtDTO;
+import dto.ProfileJwtDTO;
 import com.company.enums.ProfileRole;
 import com.company.exception.AppForbiddenException;
 import com.company.exception.TokenNotValidException;

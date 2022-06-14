@@ -1,6 +1,6 @@
 package com.company.service;
 
-import com.company.dto.VideoLikeDTO;
+import dto.VideoLikeDTO;
 import com.company.entity.VideoLikeEntity;
 import com.company.exception.AppForbiddenException;
 import com.company.exception.ItemNotFoundException;

@@ -1,7 +1,7 @@
 package com.company.service;
 
-import com.company.dto.VideoAboutDTO;
-import com.company.dto.VideoDTO;
+import dto.VideoAboutDTO;
+import dto.VideoDTO;
 import com.company.entity.AttachEntity;
 import com.company.entity.CategoryEntity;
 import com.company.entity.ChannelEntity;

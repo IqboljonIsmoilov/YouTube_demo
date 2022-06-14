@@ -7,8 +7,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.Authorization;
 import lombok.RequiredArgsConstructor;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,6 +16,7 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.servlet.http.HttpServletRequest;
 
 @RequiredArgsConstructor
+@Slf4j
 @RestController
 @RequestMapping("/attach")
 @Api(tags = "Atach")
@@ -24,9 +24,7 @@ public class AttachController {
 
     private final AttachService attachService;
 
-    private Logger log = LoggerFactory.getLogger(AttachController.class);
-
-    @ApiOperation(value = "upload", notes = "Mathod used for upload", nickname = "nickname")
+    @ApiOperation(value = "upload", notes = "Mathod used for upload")
     @PostMapping("/upload")
     public ResponseEntity<?> create(@RequestParam("file") MultipartFile file) {
         log.info("/upload");

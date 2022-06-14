@@ -1,15 +1,14 @@
-package com.company.dto;
+package dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.validation.constraints.NotNull;
-
 @Getter
 @Setter
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class BaseDTO extends TimeAndIdDTO {
-    @NotNull
-    private String name;
+public class VideoLikeDTO extends TimeAndIdDTO {
+
+    private String profileId;
+    private Integer videoId;
 }

@@ -1,16 +1,15 @@
 package com.company.controller;
 
-import com.company.dto.PlaylistVideoDTO;
-import com.company.dto.PlaylistVideoIdDTO;
-import com.company.dto.UpdateOrderNumDTO;
 import com.company.service.PlayListVideoService;
 import com.company.util.JwtUtil;
+import dto.PlaylistVideoDTO;
+import dto.PlaylistVideoIdDTO;
+import dto.UpdateOrderNumDTO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.Authorization;
 import lombok.RequiredArgsConstructor;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,6 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 @RequiredArgsConstructor
+@Slf4j
 @RestController
 @RequestMapping("/playListVideo")
 @Api(tags = "playListVideo")
@@ -25,26 +25,24 @@ public class PlayListVideoController {
 
     private final PlayListVideoService playListVideoService;
 
-    private Logger log = LoggerFactory.getLogger(AuthController.class);
-
 
     @ApiOperation(value = "Create", notes = "Method used for add video to playlist",
             authorizations = @Authorization(value = "JWT Token"))
     @PostMapping("/public")
-    public ResponseEntity<?> create(@RequestBody @Valid PlaylistVideoDTO dto,
+    public ResponseEntity<?> create(@RequestBody @Valid PlaylistVideoDTO reqestDTO,
                                     HttpServletRequest request) {
-        log.info("CREATE {}", dto);
-        return ResponseEntity.ok(playListVideoService.create(dto, JwtUtil.getIdFromHeader(request)));
+        log.info("CREATE {}{}", reqestDTO, PlayListVideoController.class);
+        return ResponseEntity.ok(playListVideoService.create(reqestDTO, JwtUtil.getIdFromHeader(request)));
     }
 
     @ApiOperation(value = "Update", notes = "Method used for update update order num videos in the playlist",
             authorizations = @Authorization(value = "JWT Token"))
     @PutMapping("/public/{playlistVideoId}")
-    public ResponseEntity<?> update(@RequestBody @Valid UpdateOrderNumDTO dto,
+    public ResponseEntity<?> update(@RequestBody @Valid UpdateOrderNumDTO updateDTO,
                                     @PathVariable("playlistVideoId") String playlistVideoId,
                                     HttpServletRequest request) {
-        log.info("/public/{playlistVideoId} {}", dto);
-        return ResponseEntity.ok(playListVideoService.update(dto, playlistVideoId, JwtUtil.getIdFromHeader(request)));
+        log.info("Update: {}{}", updateDTO, PlayListVideoController.class);
+        return ResponseEntity.ok(playListVideoService.update(updateDTO, playlistVideoId, JwtUtil.getIdFromHeader(request)));
     }
 
     @ApiOperation(value = "Delete", notes = "Method used for delete playlist video only owner deleted",
@@ -52,7 +50,7 @@ public class PlayListVideoController {
     @DeleteMapping("/public/delete")
     public ResponseEntity<?> delete(@RequestBody @Valid PlaylistVideoIdDTO dto,
                                     HttpServletRequest request) {
-        log.info("/public/delete {}", dto);
+        log.info("Delete: {}{}", dto, PlayListVideoController.class);
         return ResponseEntity.ok(playListVideoService.delete(dto, JwtUtil.getIdFromHeader(request)));
     }
 }

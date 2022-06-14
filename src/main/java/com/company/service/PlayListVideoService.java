@@ -1,8 +1,8 @@
 package com.company.service;
 
-import com.company.dto.PlaylistVideoDTO;
-import com.company.dto.PlaylistVideoIdDTO;
-import com.company.dto.UpdateOrderNumDTO;
+import dto.PlaylistVideoDTO;
+import dto.PlaylistVideoIdDTO;
+import dto.UpdateOrderNumDTO;
 import com.company.entity.PlaylistEntity;
 import com.company.entity.PlaylistVideoEntity;
 import com.company.entity.VideoEntity;

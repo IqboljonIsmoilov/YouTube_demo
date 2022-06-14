@@ -1,6 +1,6 @@
 package com.company.service;
 
-import com.company.dto.EmailDTO;
+import dto.EmailDTO;
 import com.company.entity.EmailEntity;
 import com.company.enums.EmailType;
 import com.company.exception.ItemNotFoundException;

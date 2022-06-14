@@ -1,4 +1,4 @@
-package com.company.dto;
+package dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Getter;
@@ -9,9 +9,11 @@ import java.time.LocalDateTime;
 @Setter
 @Getter
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class TimeAndIdDTO {
-
+public class IdNameKeyDecDTO {
     private String id;
-    private LocalDateTime createdDate;
+    private String description;
+    private String key;
+    private LocalDateTime CreatedDate;
     private LocalDateTime UpdatedDate;
+
 }

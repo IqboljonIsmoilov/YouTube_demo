@@ -1,4 +1,4 @@
-package com.company.dto;
+package dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Getter;
@@ -7,8 +7,6 @@ import lombok.Setter;
 @Getter
 @Setter
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class VideoLikeDTO extends TimeAndIdDTO {
+public class TagDTO extends BaseDTO {
 
-    private String profileId;
-    private Integer videoId;
 }

@@ -1,17 +1,16 @@
 package com.company.controller;
 
-import com.company.dto.AttachDTO;
-import com.company.dto.ChannelDTO;
-import com.company.dto.ChannelUpdateDTO;
 import com.company.enums.ProfileRole;
 import com.company.service.ChannelService;
 import com.company.util.JwtUtil;
+import dto.AttachDTO;
+import dto.ChannelDTO;
+import dto.ChannelUpdateDTO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.Authorization;
 import lombok.RequiredArgsConstructor;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,19 +19,18 @@ import javax.validation.Valid;
 
 
 @RequiredArgsConstructor
+@Slf4j
 @RestController
 @RequestMapping("/channel")
 @Api(tags = "Channel")
 public class ChannelController {
 
     private final ChannelService channelService;
-    private Logger log = LoggerFactory.getLogger(ChannelController.class);
 
 
     @ApiOperation(value = "Get", notes = "Method used for get channel info")
     @GetMapping("/{channelId}")
     public ResponseEntity<?> get(@PathVariable("channelId") String channelId) {
-        log.info("/{channelId} {}", channelId);
         return ResponseEntity.ok(channelService.get(channelId));
     }
 
@@ -40,43 +38,42 @@ public class ChannelController {
     @ApiOperation(value = "Create", notes = "Method used for create channel",
             authorizations = @Authorization(value = "JWT Token"))
     @PostMapping("/public")
-    public ResponseEntity<?> create(@RequestBody @Valid ChannelDTO dto,
+    public ResponseEntity<?> create(@RequestBody @Valid ChannelDTO requestDTO,
                                     HttpServletRequest request) {
-        log.info("CREATE {}", dto);
-
-        return ResponseEntity.ok(channelService.create(dto, JwtUtil.getIdFromHeader(request)));
+        log.info("CREATE {}{}", requestDTO, ChannelController.class);
+        return ResponseEntity.ok(channelService.create(requestDTO, JwtUtil.getIdFromHeader(request)));
     }
 
 
     @ApiOperation(value = "updateChannel ", notes = "Method used for updateChannel",
             authorizations = @Authorization(value = "JWT Token"))
     @PutMapping("/public/{channelId}")
-    public ResponseEntity<?> updateChannel(@RequestBody @Valid ChannelUpdateDTO dto,
+    public ResponseEntity<?> updateChannel(@RequestBody @Valid ChannelUpdateDTO updateDTO,
                                            @PathVariable("channelId") String channelId,
                                            HttpServletRequest request) {
-        log.info("UPDATE about {}", dto);
-        return ResponseEntity.ok(channelService.updateChannel(dto, channelId, JwtUtil.getIdFromHeader(request)));
+        log.info("UPDATE about {}{}", updateDTO, ChannelController.class);
+        return ResponseEntity.ok(channelService.updateChannel(updateDTO, channelId, JwtUtil.getIdFromHeader(request)));
     }
 
 
     @ApiOperation(value = "updateChannelPhoto", notes = "Method used for updateChannelPhoto",
             authorizations = @Authorization(value = "JWT Token"))
     @PutMapping("/public/image/{channelId}")
-    public ResponseEntity<?> updateChannelPhoto(@RequestBody @Valid AttachDTO dto,
+    public ResponseEntity<?> updateChannelPhoto(@RequestBody @Valid AttachDTO updateDTO,
                                                 @PathVariable("channelId") String channelId,
                                                 HttpServletRequest request) {
-        log.info("/public/image/{channelId} {}", dto);
-        return ResponseEntity.ok(channelService.updateChannelPhoto(dto.getId(), channelId, JwtUtil.getIdFromHeader(request)));
+        log.info("update Channel Photo: {}{}", updateDTO, ChannelController.class);
+        return ResponseEntity.ok(channelService.updateChannelPhoto(updateDTO.getId(), channelId, JwtUtil.getIdFromHeader(request)));
     }
 
     @ApiOperation(value = "Channel Banner", notes = "Method used for update channel banner",
             authorizations = @Authorization(value = "JWT Token"))
     @PutMapping("/public/banner/{channelId}")
-    public ResponseEntity<?> channelBanner(@RequestBody @Valid AttachDTO dto,
+    public ResponseEntity<?> channelBanner(@RequestBody @Valid AttachDTO updateDTO,
                                            @PathVariable("channelId") String channelId,
                                            HttpServletRequest request) {
-        log.info("/public/banner/{channelId} {}", dto);
-        return ResponseEntity.ok(channelService.updateChannelBanner(dto.getId(), channelId, JwtUtil.getIdFromHeader(request)));
+        log.info("Channel Banner {}{}", updateDTO, ChannelController.class);
+        return ResponseEntity.ok(channelService.updateChannelBanner(updateDTO.getId(), channelId, JwtUtil.getIdFromHeader(request)));
     }
 
 
@@ -85,7 +82,7 @@ public class ChannelController {
     @PutMapping("/public/status/{channelId}")
     public ResponseEntity<?> changeStatus(@PathVariable("channelId") String channelId,
                                           HttpServletRequest request) {
-        log.info("/public/status/{channelId} {}", channelId);
+        log.info("Change Status: {}{}", channelId, ChannelController.class);
         return ResponseEntity.ok(channelService.changeStatus(channelId, JwtUtil.getIdFromHeader(request)));
     }
 
@@ -100,5 +97,4 @@ public class ChannelController {
         JwtUtil.getIdFromHeader(request, ProfileRole.ADMIN);
         return ResponseEntity.ok(channelService.list(page, size));
     }
-
 }

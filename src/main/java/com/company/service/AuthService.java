@@ -1,8 +1,8 @@
 package com.company.service;
 
-import com.company.dto.AuthDTO;
-import com.company.dto.ProfileDTO;
-import com.company.dto.RegistrationDTO;
+import dto.AuthDTO;
+import dto.ProfileDTO;
+import dto.RegistrationDTO;
 import com.company.entity.ProfileEntity;
 import com.company.enums.ProfileRole;
 import com.company.enums.ProfileStatus;

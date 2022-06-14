@@ -1,6 +1,6 @@
 package com.company.config;
 
-import com.company.dto.ProfileJwtDTO;
+import dto.ProfileJwtDTO;
 import com.company.exception.AppBadRequestException;
 import com.company.util.JwtUtil;
 import io.jsonwebtoken.JwtException;

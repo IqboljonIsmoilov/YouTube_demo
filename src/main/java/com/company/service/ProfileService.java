@@ -1,6 +1,6 @@
 package com.company.service;
 
-import com.company.dto.ProfileDTO;
+import dto.ProfileDTO;
 import com.company.entity.ProfileEntity;
 import com.company.enums.ProfileStatus;
 import com.company.exception.EmailAlreadyExistsException;

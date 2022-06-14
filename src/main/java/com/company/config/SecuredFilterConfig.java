@@ -29,8 +29,6 @@ public class SecuredFilterConfig {
         bean.addUrlPatterns("/video/adm/*");
         bean.addUrlPatterns("/video/public/*");
 
-
         return bean;
     }
-
 }

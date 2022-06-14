@@ -1,6 +1,6 @@
 package com.company.service;
 
-import com.company.dto.AttachDTO;
+import dto.AttachDTO;
 import com.company.entity.AttachEntity;
 import com.company.exception.AppBadRequestException;
 import com.company.exception.DownloadNotFoundException;

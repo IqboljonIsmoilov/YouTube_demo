@@ -32,6 +32,7 @@ public class SwaggerConfig {
                 .apiInfo(apiDetails());
     }
 
+
     private ApiInfo apiDetails() {
         return new ApiInfo("Youtube",
                 "Api documentation for youtube project.",

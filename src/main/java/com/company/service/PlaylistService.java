@@ -1,7 +1,7 @@
 package com.company.service;
 
-import com.company.dto.PlaylistAboutDTO;
-import com.company.dto.PlaylistDTO;
+import dto.PlaylistAboutDTO;
+import dto.PlaylistDTO;
 import com.company.entity.ChannelEntity;
 import com.company.entity.PlaylistEntity;
 import com.company.enums.PlaylistStatus;
